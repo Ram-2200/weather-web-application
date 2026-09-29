@@ -1,46 +1,40 @@
-# weather-web-application
 # 🌦️ Weather Web Application
 
-A simple and responsive **Weather Web Application** that allows users to search for a city and view its current weather information.
-
-The project uses a weather API to fetch real-time weather data and displays it through a clean and easy-to-use interface.
+A simple and responsive weather web application that allows users to search for a city and view its current weather information.
 
 ## ✨ Features
 
-* 🔍 Search weather by city name
-* 🌡️ Display current temperature
-* ☁️ Show current weather conditions
-* 💧 Display humidity information
-* 💨 Show wind speed
-* 🌤️ Dynamic weather information fetched from an API
-* 📱 Responsive and user-friendly interface
-* ⚡ Fast and lightweight application
+- 🔍 Search weather by city name
+- 🌡️ Display current temperature
+- ☁️ Display current weather conditions
+- 💧 Display humidity
+- 💨 Display wind information
+- 📱 Responsive user interface
+- ⚡ Fetches weather data dynamically
 
 ## 🛠️ Technologies Used
 
-* **HTML5** — Application structure
-* **CSS3** — Styling and responsive design
-* **JavaScript** — Application logic and DOM manipulation
-* **Weather API** — Fetching real-time weather information
+- HTML5
+- CSS3
+- JavaScript
+- Weather API
 
 ## 🚀 How It Works
 
-1. The user enters the name of a city.
-2. JavaScript sends a request to the weather API.
-3. The API returns the latest weather information for the requested city.
-4. The application processes the response.
-5. Weather information is dynamically displayed on the webpage.
-
-This project helped me understand how frontend applications communicate with external APIs and how asynchronous JavaScript can be used to work with real-time data.
+1. Enter the name of a city in the search box.
+2. The application sends a request to the weather API.
+3. The API returns the weather information.
+4. JavaScript processes the response.
+5. The weather information is displayed on the webpage.
 
 ## 📂 Project Structure
 
 ```text
 weather-web-application/
 │
-├── index.html
-├── style.css
-├── script.js
+├── Weather.html
+├── Weather.css
+├── Weather.js
 └── README.md
 ```
 
