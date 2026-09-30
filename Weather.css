@@ -1,174 +1,221 @@
-/*Javascriptpro_*/
-/*Dont forget to follow me on github,instagram and codepen.*/
+/* Weather Web Application - Batch 2 */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}   
 
-body{
-background:#BBCEDF;  
-font-family: 'poppins', sans-serif;
+:root {
+    --page-bg: #BBCEDF;
+    --card-bg: #3A3E4A;
+    --dark-bg: #19202A;
+    --primary-blue: #62b8f5;
+    --secondary-blue: #4475ef;
+    --text-light: #ffffff;
+    --text-muted: #d3d3d3;
 }
 
-.container{
-padding:20px; 
-width:360px;
-background:#3A3E4A;
-border-radius:10px;
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container .search-box{
-padding:5px;   
-height:50px;
-background:#19202A;
-border-radius:30px;
-display:flex;
-align-items:center;
+body {
+    min-height: 100vh;
+    background: var(--page-bg);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-.container .search-box i{
-color:grey;  
-position:relative;
-left:14px;
-font-size:14px;
+/* Main weather card */
+
+.container {
+    padding: 20px;
+    width: 100%;
+    max-width: 360px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.container .search-box input{
-all:unset; 
-height:50px;
-position:relative;
-left:25px;
-font-size:14px;
-border-top-right-radius:30px;
-border-bottom-right-radius:30px;
-color:lightgrey;
+/* Search */
+
+.container .search-box {
+    padding: 5px 15px;
+    height: 50px;
+    background: var(--dark-bg);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
 }
 
-.container .weather-info-box{
-background:linear-gradient(135deg,#62b8f5,#4475ef);
-border-radius:15px;   
-padding:20px;
-width:100%;
-margin-top:15px;
+.container .search-box i {
+    color: grey;
+    font-size: 14px;
+    flex-shrink: 0;
 }
 
-.container .weather-info-box .location{
-text-align:center;
-font-size:13px;
-margin-top:-2px;
-color:white;
+.container .search-box input {
+    all: unset;
+    width: 100%;
+    height: 50px;
+    margin-left: 15px;
+    font-size: 14px;
+    color: var(--text-muted);
 }
 
-.container .weather-info-box .location i{
-font-size:11px;
-padding-right:3px;
+.container .search-box input::placeholder {
+    color: #888;
 }
 
-.container .weather-info-box .weather-img{
-height:130px;  
-width:130px;
-margin-top:9px;
-display:flex;
-align-items:center;
-justify-content:center;
+.container .search-box input:focus {
+    color: var(--text-light);
 }
 
-.container .weather-info-box .weather-img img{
-height:130px; 
-width:130px;
-position:relative;
-top:4px;
+/* Weather information */
+
+.container .weather-info-box {
+    background: linear-gradient(
+        135deg,
+        var(--primary-blue),
+        var(--secondary-blue)
+    );
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    margin-top: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-.container .weather-info-box .weather-info{
-margin-top:-120px;   
-height:110px;
-width:130px;
-float:right;
+.container .weather-info-box .location {
+    text-align: center;
+    font-size: 13px;
+    margin-top: -2px;
+    color: var(--text-light);
 }
 
-.container .weather-info-box .weather-info .temp{
-font-size:40px;
-color:white;
-position:relative;
-top:3px;
+.container .weather-info-box .location i {
+    font-size: 11px;
+    padding-right: 3px;
 }
 
-.container .weather-info-box .weather-info .weather_main_1{
-font-size:20px;
-color:white;
-font-weight:400;
-text-transform:uppercase;
-margin-top:-4px;
+.container .weather-info-box .weather-img {
+    height: 130px;
+    width: 130px;
+    margin-top: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.container .weather-info-box .weather-info .weather_descrip{
- padding:4px;
-padding-left:10px;
-padding-right:10px;
-background:white;
-white-space:nowrap;
-font-size:8px;
-border-radius:15px;
-margin-top:.5px;
-max-width:73px;
-text-align:center;
+.container .weather-info-box .weather-img img {
+    height: 130px;
+    width: 130px;
+    object-fit: contain;
+    position: relative;
+    top: 4px;
 }
 
-.container .other-weather-info{
-padding:10px; 
-margin-top:15px;
-border-radius:10px;
-height:150px;
-background:#19202A;
+.container .weather-info-box .weather-info {
+    margin-top: -120px;
+    min-height: 110px;
+    width: 130px;
+    float: right;
 }
 
-.container .other-weather-info div{
-height:60px;
-width:90px;
-float:left;
-color:black;
-text-align:center;
-margin-left:7px;
-margin-top:4px;
-position:relative;
-top:.5px;
+.container .weather-info-box .weather-info .temp {
+    font-size: 40px;
+    color: var(--text-light);
+    position: relative;
+    top: 3px;
 }
 
-.container .other-weather-info div span{
-font-weight:300;
-padding:3px;
-padding-left:10px;
-padding-right:10px;
-text-align:center;
-border-radius:30px;
-font-size:8px;
-background:white;
-color:black;
-font-weight:600;
+.container .weather-info-box .weather-info .weather_main_1 {
+    font-size: 20px;
+    color: var(--text-light);
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: -4px;
 }
 
-.container .other-weather-info div p{
-margin-top:7px;
-font-size:14px;
-font-weight:500;
-color:white;
+.container .weather-info-box .weather-info .weather_descrip {
+    padding: 4px 10px;
+    background: var(--text-light);
+    white-space: nowrap;
+    font-size: 8px;
+    border-radius: 15px;
+    margin-top: 0.5px;
+    max-width: 73px;
+    text-align: center;
+}
+
+/* Additional weather information */
+
+.container .other-weather-info {
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 10px;
+    min-height: 150px;
+    background: var(--dark-bg);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.container .other-weather-info div {
+    min-height: 60px;
+    width: 100%;
+    color: black;
+    text-align: center;
+    margin: 4px 0 0;
+    position: relative;
+}
+
+.container .other-weather-info div span {
+    display: inline-block;
+    font-weight: 600;
+    padding: 3px 10px;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 8px;
+    background: var(--text-light);
+    color: black;
+}
+
+.container .other-weather-info div p {
+    margin-top: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-light);
 }
 
 .container .other-weather-info .pressure p,
-.container .other-weather-info .wind-speed p{
-font-size:13px;        
+.container .other-weather-info .wind-speed p {
+    font-size: 13px;
 }
 
-::selection{
-background:white;
-color:#62b8f5;
+/* Small-screen support */
+
+@media (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .container .other-weather-info {
+        gap: 5px;
+        padding: 8px;
+    }
 }
 
+/* Text selection */
 
+::selection {
+    background: var(--text-light);
+    color: var(--primary-blue);
+}
